@@ -1,0 +1,113 @@
+/* General Color Scheme */
+:root {
+    --primary-color: #3498db; /* A nice blue */
+    --secondary-color: #e74c3c; /* A vibrant red */
+    --accent-color: #f39c12;   /* A warm orange */
+    --background-color: #f0f0f0; /* Light grey */
+    --text-color: #333;       /* Dark grey */
+    --light-text-color: #777; /* lighter grey*/
+    --card-background: #fff;    /* White for cards*/
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color); /* Use the background color */
+    color: var(--text-color); /* Use the text color */
+}
+
+/* Navbar Styles */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--primary-color) !important;
+    color: white !important; /* Ensure text is visible on the background */
+}
+
+.navbar-brand,
+.navbar-nav .nav-link{
+    color: white !important;
+}
+
+.navbar-toggler-icon {
+    background-color: white !important;
+}
+
+
+/* Movie Card Styles */
+.movie-card {
+    transition: transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-background); /* Card background color */
+    border-radius: 8px;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card .card-img-top {
+    height: 300px;
+    object-fit: cover;
+    border-top-left-radius: 8px; /* Match the card's border-radius */
+    border-top-right-radius: 8px;
+}
+.movie-card .card-title {
+    color: var(--text-color);
+}
+
+.movie-card .card-text {
+    color: var(--light-text-color);
+}
+
+/* Movie Detail Card Styles */
+.movie-detail-card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-background);
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #2377b4; /* Darken button color on hover */
+    border-color: #2377b4;
+}
+
+
+.btn-group .btn {
+    margin-right: 5px;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #343a40;
+    color: white;
+}
+
+/* Movie Modal Styles */
+.modal-content {
+    border-radius: 10px;
+}
+.modal-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-bottom: none;
+}
+
+.modal-title {
+    color: white;
+}
+.modal-body {
+    padding: 20px;
+}
+.modal-footer {
+    border-top: none;
+}
