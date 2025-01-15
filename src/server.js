@@ -60,6 +60,24 @@ app.get('/', async (req, res) => {
     }
 });
 
+app.get('/movies/:id', async (req, res) => {
+    try {
+        const response = await fetch(`http://localhost:${process.env.PORT}/api/movies/${req.params.id}`);
+        const data = await response.json();
+        if (data.success) {
+            res.render('movieDetails', {
+                movie: data.movie,
+                currentUser: req.user ? req.user._id : null
+            });
+        } else {
+            res.redirect('/');
+        }
+    } catch (error) {
+        console.log('Movie details error:', error);
+        res.redirect('/');
+    }
+});
+
 // Routes
 app.use('/api', userRoutes);
 app.use('/api', movieRoutes);
