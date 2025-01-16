@@ -122,7 +122,7 @@ function renderMovies(movies) {
         return;
     }
 
-    const movieCards = movies.map(movie => `
+    container.innerHTML = movies.map(movie => `
         <div class="col" data-movie-id="${movie._id}">
             <div class="card h-100">
                 <img src="${movie.image}" 
@@ -140,8 +140,6 @@ function renderMovies(movies) {
             </div>
         </div>
     `).join('');
-
-    container.innerHTML = movieCards;
 }
 
 function deleteMovie(movieId) {
@@ -181,8 +179,3 @@ function deleteMovie(movieId) {
 
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', loadUserMovies);
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     updateNavigation();
-//     loadUserMovies();
-// });

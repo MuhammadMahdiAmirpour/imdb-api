@@ -31,7 +31,7 @@ app.use('/js', express.static(path.join(__dirname, '../public/js'), {
         res.setHeader('Content-Type', 'application/javascript');
     }
 }));
-app.use('/uploads', express.static(path.join(__dirname, '../public/uploads')));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
